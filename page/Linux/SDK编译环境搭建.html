@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>编译环境搭建 &mdash; 荣品开发板文档 0.0.1 文档</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> 荣品开发板文档
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">网盘链接</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">开发板文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%BD%91%E7%9B%98%E9%93%BE%E6%8E%A5.html">Rockchip</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%BD%91%E7%9B%98%E9%93%BE%E6%8E%A5.html#id1">三星</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%BD%91%E7%9B%98%E9%93%BE%E6%8E%A5.html#id2">全志</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">荣品开发板文档</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>编译环境搭建</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/Linux/SDK编译环境搭建.md.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <p>我们有提供虚拟机编译环境，可以免去编译环境的搭建。下载链接及使用文档可以在QQ交流群的群公告中找到</p>
+<p><img alt="QQ群" src="../_images/vmware.png" /></p>
+<p><font color = red> 特别说明: 不能放在虚拟机的共享文件夹中编译！！！ </font></p>
+<hr class="docutils" />
+<section id="id1">
+<h1>编译环境搭建<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h1>
+<p>SDK的编译建议使用 ubuntu18.04 或更高版本的操作系统，编译 SDK 环境搭建所依赖的软件包安装
+命令如下</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ sudo apt-get install git bc bison build-essential curl flex g++-multilib <span class="se">\</span>
+gcc-multilib gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev <span class="se">\</span>
+lib32z1-dev liblz4-tool libncurses5-dev libsdl1.2-dev libssl-dev <span class="se">\</span>
+libwxgtk3.0-dev libxml2 libxml2-utils lzop pngcrush rsync schedtool <span class="se">\</span>
+squashfs-tools xsltproc yasm zip zlib1g-dev python device-tree-compiler <span class="se">\</span>
+expect g++ patchelf  gawk texinfo chrpath diffstat binfmt-support <span class="se">\</span>
+qemu-user-static live-build fakeroot cmake python-pip repo <span class="se">\</span>
+ssh make gcc libssl-dev unzip ncurses-dev <span class="se">\</span>
+</pre></div>
+</div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ sudo pip install pyelftools
+</pre></div>
+</div>
+<p>若编译遇到报错，可以视报错信息，安装对应的软件包</p>
+<hr class="docutils" />
+<section id="android-openjdk-8-jdk">
+<h2>编译Android需要安装 openjdk-8-jdk<a class="headerlink" href="#android-openjdk-8-jdk" title="Permalink to this heading"></a></h2>
+<p>openjdk-8-jdk 默认会安装到<code class="docutils literal notranslate"><span class="pre">/usr/lib/jvm/java-8-openjdk-amd64</span></code>，如果不是安装在此目录下，在编译前修改编译脚本 make.sh。确保编译android 使用 openjdk 1.8</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo apt-get install openjdk-8-jdk
+</pre></div>
+</div>
+<p>在开始编译android 8.1之前需要保证编译终端环境jdk版本是1.8，否则无法完成android编译。可
+以使用 java -version 查看终端当前 jdk 版本</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ java -version
+java version <span class="s2">&quot;1.7.0_95&quot;</span>
+OpenJDK Runtime Environment <span class="o">(</span>IcedTea <span class="m">2</span>.6.4<span class="o">)</span> <span class="o">(</span>7u95-2.6.4-3<span class="o">)</span>
+OpenJDK <span class="m">64</span>-Bit Server VM <span class="o">(</span>build <span class="m">24</span>.95-b01, mixed mode<span class="o">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2022, rpdzkj.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
