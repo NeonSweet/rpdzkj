@@ -1,12 +1,11 @@
 myst-parser
 recommonmark
+Markdown
 sphinx
-sphinx-markdown-tables
 docutils
 sphinx-copybutton
 sphinx_markdown_tables
 sphinx_rtd_theme==0.5.2
 sphinx-rtd-theme
-pip
 setuptools
 readthedocs-sphinx-search

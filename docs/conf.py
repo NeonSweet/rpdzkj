@@ -31,11 +31,11 @@ master_doc = 'index'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx_markdown_tables',
-    'sphinx.ext.autosectionlabel',
-    'sphinx.ext.viewcode',
     'myst_parser',
     'sphinx_copybutton',
+    'sphinx.ext.autosectionlabel',
+    'sphinx.ext.viewcode',
+    'sphinx_search.extension',
 ]
 
 myst_enable_extensions = ['colon_fence']
@@ -46,6 +46,7 @@ myst_heading_anchors = 3
 
 source_suffix = {
     '.rst': 'restructuredtext',
+    '.txt': 'markdown',
     '.md': 'markdown',
 }
 
@@ -77,3 +78,21 @@ html_theme = 'sphinx_rtd_theme'
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+
+html_css_files = [
+    'css/custom.css',
+]
+
+html_js_files = [
+    'js/custom.js',
+]
+html_search_language = 'zh'
+
+#html_style = 'css/yourtheme.css'
+
+# LaTeX
+#latex_engine = 'xelatex'
+#latex_use_xindy = False
+#latex_elements = {
+#    'preamble': '\\usepackage[UTF8]{ctex}\n',
+#}
