@@ -1,12 +1,12 @@
-# markdown suport
+myst-parser
 recommonmark
-# markdown table suport
+sphinx
 sphinx-markdown-tables
-
-# theme default rtd
-
-# crate-docs-theme
+docutils
+sphinx-copybutton
+sphinx_markdown_tables
+sphinx_rtd_theme==0.5.2
 sphinx-rtd-theme
-pip==22.1.2
-setuptools==63.2.0
-readthedocs-sphinx-search==0.1.1
+pip
+setuptools
+readthedocs-sphinx-search
