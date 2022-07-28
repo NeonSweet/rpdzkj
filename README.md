@@ -107,15 +107,14 @@
 ├── RK3588-Android12.0使用指导文档.pdf
 └── RK3588-Linux使用指导文档.pdf
 ```
-```{toctree}
-:hidden:
-[网盘链接](docs/GettingStarted/网盘链接.md)
-```  
+
+
+[网盘链接](GettingStarted/网盘链接.md)
+
 
 ---
 ```{toctree}
 :hidden:
-Linux/index.md
 Linux/SDK编译环境搭建
 [index](docs/Linux/index.md)
 [SDK编译环境搭建](docs/Linux/SDK编译环境搭建.md)
@@ -123,6 +122,6 @@ Linux/SDK编译环境搭建
 
 ```{toctree}
 :hidden:
-[RK3588-Android12.0使用指导文档](docs/GettingStarted/RK3588-Android12.0使用指导文档.md)
-[RK3588-Linux使用指导文档](docs/GettingStarted/RK3588-Linux使用指导文档.md)
+GettingStarted/RK3588-Android12.0使用指导文档.md
+GettingStarted/RK3588-Linux使用指导文档.md
 ```
