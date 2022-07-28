@@ -36,6 +36,12 @@ extensions = [
     'sphinx.ext.autosectionlabel',
     'sphinx.ext.viewcode',
     'sphinx_search.extension',
+    "sphinx.ext.autodoc",
+    "sphinx.ext.intersphinx",
+    "sphinx_design",
+    "sphinxext.rediraffe",
+    "sphinxcontrib.mermaid",
+    "sphinxext.opengraph",
 ]
 
 myst_enable_extensions = ['colon_fence']
@@ -73,6 +79,46 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # a list of builtin themes.
 #
 html_theme = 'sphinx_rtd_theme'
+
+# -- Options for HTML output -------------------------------------------------
+
+# The theme to use for HTML and HTML Help pages.  See the documentation for
+# a list of builtin themes.
+#
+#html_theme = "sphinx_book_theme"
+#html_logo = "_static/logo-wide.svg"
+#html_favicon = "_static/logo-square.svg"
+#html_title = ""
+#html_theme_options = {
+#    "home_page_in_toc": True,
+#    "github_url": "https://github.com/executablebooks/MyST-Parser",
+#    "repository_url": "https://github.com/executablebooks/MyST-Parser",
+#    "repository_branch": "master",
+#    "path_to_docs": "docs",
+#    "use_repository_button": True,
+#    "use_edit_page_button": True,
+#}
+#
+#myst_enable_extensions = [
+#    "dollarmath",
+#    "amsmath",
+#    "deflist",
+#    "fieldlist",
+#    "html_admonition",
+#    "html_image",
+#    "colon_fence",
+#    "smartquotes",
+#    "replacements",
+#    "linkify",
+#    "strikethrough",
+#    "substitution",
+#    "tasklist",
+#]
+#myst_number_code_blocks = ["typescript"]
+#myst_heading_anchors = 2
+#myst_footnote_transition = True
+#myst_dmath_double_inline = True
+
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
